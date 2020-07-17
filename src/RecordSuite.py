@@ -1,6 +1,6 @@
 import Speech as sp
 import json
-import XpathRepo as xpathRepo
+#import XpathRepo as xpathRepo
 #Record the test cases by suite
 def recordSuite():
     suite = {"settings": {}, "variables": {},"test cases": {}}
