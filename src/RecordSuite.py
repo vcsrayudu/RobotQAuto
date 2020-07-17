@@ -1,11 +1,15 @@
 import Speech as sp
-import TrainingSuite as ts
+import json
 import XpathRepo as xpathRepo
 #Record the test cases by suite
 def recordSuite():
     suite = {"settings": {}, "variables": {},"test cases": {}}
     settingsList=["SeleniumLibrary"];
-    variableList={"Browser":"Chrome","Url":ts.variables["amazon"]};
+    with open('../config/config.json') as confFile:
+        confObj = json.load(confFile)
+    with open('./training/TrainingSuite.json') as trainingFile:
+        trainingRepo = json.load(trainingFile)
+    variableList={"Browser":confObj["Browser"],"Url":confObj["Url"]};
     testcaseList={};
     test=""
     remove=""
@@ -47,7 +51,7 @@ def recordSuite():
                         variableName+=st
                     print("\n****** Say Variable value for name "+variableName+" ****** \n"); 
                     varValue=sp.recordVoice()
-                    variableList[variableName.title()]=ts.variables[varValue]
+                    variableList[variableName.title()]=trainingRepo['variables'][varValue]
                 except:
                     variableList[variableName.title()]=varValue
                 #variableList.add(inputVoice.title())
@@ -60,7 +64,7 @@ def recordSuite():
                 #settingsList.remove(lastCommand)
             else:
                 try:
-                    settingsList.append(ts.settings[inputVoice])
+                    settingsList.append(trainingRepo['settings'][inputVoice])
                 except:
                     settingsList.append(inputVoice.title())
                 
@@ -109,15 +113,23 @@ def recordSuite():
     del settingsList
     del testcaseList
     if suiteName not in "":
-        writeToFile(suite, suiteName)
+        writeToFile(suiteName,suite)
     else:
          print("\n****** Suite Name is empty, Default Suite file is default.robot ******\n")
-         writeToFile(suite, "default")
+         writeToFile("default",suite)
     
-def writeToFile(suite,suiteName):
+def writeToFile(suiteName,suite):
     #New suite is writing to the file
     f = open("../suites/"+suiteName+".robot", "w+")
     print("\n******* Writing to Suite file at location *******\n"+"../suites/"+suiteName+".robot")
+    with open('./training/TrainingSuite.json') as trainingFile:
+        trainingRepo = json.load(trainingFile)
+    try:
+        with open('../page/'+suiteName+'.json') as xpathFile:
+            xpathRepo = json.load(xpathFile)
+    except:
+        with open('../page/xpath.json') as xpathFile:
+            xpathRepo = json.load(xpathFile)
     for library in suite:
         if library in "settings":
             f.write("*** Settings ***" )
@@ -131,28 +143,28 @@ def writeToFile(suite,suiteName):
             f.write("\n*** Test Cases ***")
             for testcase in suite[library]:
                 f.write("\n" + testcase.title())
-                f.write("\n\t"+ts.steps["Open Browser"])
+                f.write("\n\t"+trainingRepo['steps']["Open Browser"])
                 for steps in suite[library][testcase]:
                     try:
                         step=steps.split(" ")
                         if "Input" in step[0]:
                             try:
-                                f.write("\n\tInput Text  xpath="+xpathRepo.xpath[step[1]]+"  "+step[2].title())
+                                f.write("\n\tInput Text  xpath="+xpathRepo[step[1]]+"  "+step[2].title())
                             except:
                                 f.write("\n\tInput Text  xpath="+step[1]+"  "+step[2].title())
                         elif "Click" in step[0]:
                             try:
-                                f.write("\n\tClick Element  xpath="+xpathRepo.xpath[step[1]])
+                                f.write("\n\tClick Element  xpath="+xpathRepo[step[1]])
                             except:
                                 f.write("\n\tClick Element  xpath="+step[1])
                         else:
-                            f.write("\n\t"+ts.steps[steps.title()])
+                            f.write("\n\t"+trainingRepo['steps'][steps.title()])
                     except:
                         f.write("\n\t"+steps.title())
-                f.write("\n\t"+ts.steps["Close Browser"])   
+                f.write("\n\t"+trainingRepo['steps']["Close Browser"])   
     print("\n******* New Suite Created Succesfully *******\n")
     del suite
     
     f.close()
 
-recordSuite()
+#recordSuite()

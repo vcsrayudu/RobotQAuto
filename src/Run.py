@@ -2,6 +2,7 @@ import Speech as sp
 import os
 import subprocess
 import RecordSuite as recordSuite
+import GenerateScenario as generateScenario
 import time;
 
 def run():
@@ -33,9 +34,22 @@ def run():
             elif "analyse"  in command:
                 print("\n****** Analyze the results *******\n")
                 pass
+            elif "generate"  in command:
+                print("\n****** Generate LoginScenario *******\n")
+                suite=generateScenario.generateScenario("LoginScenario");
+                recordSuite.writeToFile("LoginScenario",suite)
+                print("\n****** Generate Scenario *******\n")
+                pass
+            elif "generate testdata"  in command:
+                print("\n****** Generate Test Data *******\n")
+                pass
+            elif "generate test steps"  in command:
+                print("\n****** Generate Test Steps *******\n")
+                pass
             else:
                 continue;
-        except:
+        except Exception as e:
+            print(e)
             continue;
 
 run()

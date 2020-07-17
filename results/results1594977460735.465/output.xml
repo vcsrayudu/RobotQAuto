@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.1.2 (Python 3.6.8rc1 on win32)" generated="20200717 14:47:41.316" rpa="false">
+<suite id="s1" name="LoginFunctionality &amp; LoginScenario &amp; Default &amp; Suite">
+<suite id="s1-s1" name="LoginFunctionality" source="C:\Subbu_Code\RobotQAuto\suites\LoginFunctionality.robot">
+<test id="s1-s1-t1" name="Nagin Gurjar">
+<kw name="Open Browser">
+<msg timestamp="20200717 14:47:41.373" level="FAIL">No keyword with name 'Open Browser' found.</msg>
+<status status="FAIL" starttime="20200717 14:47:41.373" endtime="20200717 14:47:41.373"></status>
+</kw>
+<status status="FAIL" starttime="20200717 14:47:41.363" endtime="20200717 14:47:41.375" critical="yes">No keyword with name 'Open Browser' found.</status>
+</test>
+<status status="FAIL" starttime="20200717 14:47:41.356" endtime="20200717 14:47:41.387"></status>
+</suite>
+<suite id="s1-s2" name="LoginScenario" source="C:\Subbu_Code\RobotQAuto\suites\LoginScenario.robot">
+<test id="s1-s2-t1" name="Login With Valid User And Password">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<arguments>
+<arg>${URL}</arg>
+<arg>${Browser}</arg>
+</arguments>
+<msg timestamp="20200717 14:47:41.698" level="INFO">Opening browser 'Chrome' to base url 'Http://Amazon.Com'.</msg>
+<status status="PASS" starttime="20200717 14:47:41.697" endtime="20200717 14:47:48.719"></status>
+</kw>
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<arguments>
+<arg>${URL}</arg>
+<arg>${Browser}</arg>
+</arguments>
+<msg timestamp="20200717 14:47:48.721" level="INFO">Opening browser 'Chrome' to base url 'Http://Amazon.Com'.</msg>
+<status status="PASS" starttime="20200717 14:47:48.720" endtime="20200717 14:47:58.105"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=User</arg>
+<arg>Subbu</arg>
+</arguments>
+<msg timestamp="20200717 14:47:58.122" level="INFO">Typing text 'Subbu' into text field 'xpath=User'.</msg>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20200717 14:47:59.954" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20200717 14:47:58.444" endtime="20200717 14:47:59.954"></status>
+</kw>
+<msg timestamp="20200717 14:47:59.962" level="FAIL">Element with locator 'xpath=User' not found.</msg>
+<status status="FAIL" starttime="20200717 14:47:58.121" endtime="20200717 14:47:59.962"></status>
+</kw>
+<status status="FAIL" starttime="20200717 14:47:41.693" endtime="20200717 14:47:59.963" critical="yes">Element with locator 'xpath=User' not found.</status>
+</test>
+<test id="s1-s2-t2" name="Login With Invalid User And Valid Password">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<arguments>
+<arg>${URL}</arg>
+<arg>${Browser}</arg>
+</arguments>
+<msg timestamp="20200717 14:47:59.970" level="INFO">Opening browser 'Chrome' to base url 'Http://Amazon.Com'.</msg>
+<status status="PASS" starttime="20200717 14:47:59.970" endtime="20200717 14:48:10.037"></status>
+</kw>
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<arguments>
+<arg>${URL}</arg>
+<arg>${Browser}</arg>
+</arguments>
+<msg timestamp="20200717 14:48:10.041" level="INFO">Opening browser 'Chrome' to base url 'Http://Amazon.Com'.</msg>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20200717 14:48:31.098" level="FAIL">WebDriverException: Message: chrome not reachable
+  (Session info: chrome=83.0.4103.116)
+</msg>
+<status status="FAIL" starttime="20200717 14:48:27.071" endtime="20200717 14:48:31.098"></status>
+</kw>
+<msg timestamp="20200717 14:48:31.098" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: WebDriverException: Message: chrome not reachable
+  (Session info: chrome=83.0.4103.116)
+</msg>
+<msg timestamp="20200717 14:48:31.107" level="FAIL">WebDriverException: Message: unknown error: cannot determine loading status
+from disconnected: received Inspector.detached event
+  (Session info: chrome=83.0.4103.116)
+</msg>
+<status status="FAIL" starttime="20200717 14:48:10.039" endtime="20200717 14:48:31.108"></status>
+</kw>
+<status status="FAIL" starttime="20200717 14:47:59.968" endtime="20200717 14:48:31.112" critical="yes">WebDriverException: Message: unknown error: cannot determine loading status
+from disconnected: received Inspector.detached event
+  (Session info: chrome=83.0.4103.116)
+</status>
+</test>
+<test id="s1-s2-t3" name="Login With Valid User And Invalid Password">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<arguments>
+<arg>${URL}</arg>
+<arg>${Browser}</arg>
+</arguments>
+<msg timestamp="20200717 14:48:31.131" level="INFO">Opening browser 'Chrome' to base url 'Http://Amazon.Com'.</msg>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20200717 14:48:38.755" level="FAIL">WebDriverException: Message: chrome not reachable
+  (Session info: chrome=83.0.4103.116)
+</msg>
+<status status="FAIL" starttime="20200717 14:48:34.719" endtime="20200717 14:48:38.755"></status>
+</kw>
+<msg timestamp="20200717 14:48:38.755" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: WebDriverException: Message: chrome not reachable
+  (Session info: chrome=83.0.4103.116)
+</msg>
+<msg timestamp="20200717 14:48:38.763" level="FAIL">WebDriverException: Message: unknown error: cannot determine loading status
+from disconnected: received Inspector.detached event
+  (Session info: chrome=83.0.4103.116)
+</msg>
+<status status="FAIL" starttime="20200717 14:48:31.130" endtime="20200717 14:48:38.764"></status>
+</kw>
+<status status="FAIL" starttime="20200717 14:48:31.126" endtime="20200717 14:48:38.765" critical="yes">WebDriverException: Message: unknown error: cannot determine loading status
+from disconnected: received Inspector.detached event
+  (Session info: chrome=83.0.4103.116)
+</status>
+</test>
+<test id="s1-s2-t4" name="Login With Invalid User And Invalid Password">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<arguments>
+<arg>${URL}</arg>
+<arg>${Browser}</arg>
+</arguments>
+<msg timestamp="20200717 14:48:38.785" level="INFO">Opening browser 'Chrome' to base url 'Http://Amazon.Com'.</msg>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20200717 14:48:46.238" level="FAIL">WebDriverException: Message: chrome not reachable
+  (Session info: chrome=83.0.4103.116)
+</msg>
+<status status="FAIL" starttime="20200717 14:48:42.219" endtime="20200717 14:48:46.239"></status>
+</kw>
+<msg timestamp="20200717 14:48:46.239" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: WebDriverException: Message: chrome not reachable
+  (Session info: chrome=83.0.4103.116)
+</msg>
+<msg timestamp="20200717 14:48:46.246" level="FAIL">WebDriverException: Message: unknown error: cannot determine loading status
+from disconnected: received Inspector.detached event
+  (Session info: chrome=83.0.4103.116)
+</msg>
+<status status="FAIL" starttime="20200717 14:48:38.785" endtime="20200717 14:48:46.246"></status>
+</kw>
+<status status="FAIL" starttime="20200717 14:48:38.779" endtime="20200717 14:48:46.247" critical="yes">WebDriverException: Message: unknown error: cannot determine loading status
+from disconnected: received Inspector.detached event
+  (Session info: chrome=83.0.4103.116)
+</status>
+</test>
+<status status="FAIL" starttime="20200717 14:47:41.411" endtime="20200717 14:48:46.271"></status>
+</suite>
+<suite id="s1-s3" name="Default" source="C:\Subbu_Code\RobotQAuto\suites\default.robot">
+<test id="s1-s3-t1" name="Login Test">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<arguments>
+<arg>${URL}</arg>
+<arg>${Browser}</arg>
+</arguments>
+<msg timestamp="20200717 14:48:46.303" level="INFO">Opening browser 'Chrome' to base url 'Http://Amazon.Com'.</msg>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20200717 14:48:53.343" level="FAIL">WebDriverException: Message: chrome not reachable
+  (Session info: chrome=83.0.4103.116)
+</msg>
+<status status="FAIL" starttime="20200717 14:48:49.326" endtime="20200717 14:48:53.344"></status>
+</kw>
+<msg timestamp="20200717 14:48:53.344" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: WebDriverException: Message: chrome not reachable
+  (Session info: chrome=83.0.4103.116)
+</msg>
+<msg timestamp="20200717 14:48:53.351" level="FAIL">WebDriverException: Message: unknown error: cannot determine loading status
+from disconnected: received Inspector.detached event
+  (Session info: chrome=83.0.4103.116)
+</msg>
+<status status="FAIL" starttime="20200717 14:48:46.302" endtime="20200717 14:48:53.351"></status>
+</kw>
+<status status="FAIL" starttime="20200717 14:48:46.294" endtime="20200717 14:48:53.353" critical="yes">WebDriverException: Message: unknown error: cannot determine loading status
+from disconnected: received Inspector.detached event
+  (Session info: chrome=83.0.4103.116)
+</status>
+</test>
+<status status="FAIL" starttime="20200717 14:48:46.283" endtime="20200717 14:48:53.370"></status>
+</suite>
+<suite id="s1-s4" name="Suite" source="C:\Subbu_Code\RobotQAuto\suites\suite.robot">
+<test id="s1-s4-t1" name="Search Test1">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<arguments>
+<arg>${URL}</arg>
+<arg>${Browser}</arg>
+</arguments>
+<msg timestamp="20200717 14:48:53.410" level="INFO">Opening browser 'Chrome' to base url 'http://amazon.com'.</msg>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20200717 14:49:00.163" level="FAIL">WebDriverException: Message: chrome not reachable
+  (Session info: chrome=83.0.4103.116)
+</msg>
+<status status="FAIL" starttime="20200717 14:48:56.145" endtime="20200717 14:49:00.164"></status>
+</kw>
+<msg timestamp="20200717 14:49:00.164" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: WebDriverException: Message: chrome not reachable
+  (Session info: chrome=83.0.4103.116)
+</msg>
+<msg timestamp="20200717 14:49:00.169" level="FAIL">WebDriverException: Message: unknown error: cannot determine loading status
+from disconnected: received Inspector.detached event
+  (Session info: chrome=83.0.4103.116)
+</msg>
+<status status="FAIL" starttime="20200717 14:48:53.409" endtime="20200717 14:49:00.169"></status>
+</kw>
+<status status="FAIL" starttime="20200717 14:48:53.403" endtime="20200717 14:49:00.170" critical="yes">WebDriverException: Message: unknown error: cannot determine loading status
+from disconnected: received Inspector.detached event
+  (Session info: chrome=83.0.4103.116)
+</status>
+</test>
+<test id="s1-s4-t2" name="Search Test2">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<arguments>
+<arg>${URL}</arg>
+<arg>${Browser}</arg>
+</arguments>
+<msg timestamp="20200717 14:49:00.186" level="INFO">Opening browser 'Chrome' to base url 'http://amazon.com'.</msg>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20200717 14:49:11.530" level="FAIL">WebDriverException: Message: chrome not reachable
+  (Session info: chrome=83.0.4103.116)
+</msg>
+<status status="FAIL" starttime="20200717 14:49:07.508" endtime="20200717 14:49:11.530"></status>
+</kw>
+<msg timestamp="20200717 14:49:11.530" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: WebDriverException: Message: chrome not reachable
+  (Session info: chrome=83.0.4103.116)
+</msg>
+<msg timestamp="20200717 14:49:11.538" level="FAIL">SessionNotCreatedException: Message: session not created
+from chrome not reachable
+  (Session info: chrome=83.0.4103.116)
+</msg>
+<status status="FAIL" starttime="20200717 14:49:00.186" endtime="20200717 14:49:11.539"></status>
+</kw>
+<status status="FAIL" starttime="20200717 14:49:00.179" endtime="20200717 14:49:11.541" critical="yes">SessionNotCreatedException: Message: session not created
+from chrome not reachable
+  (Session info: chrome=83.0.4103.116)
+</status>
+</test>
+<status status="FAIL" starttime="20200717 14:48:53.388" endtime="20200717 14:49:11.553"></status>
+</suite>
+<status status="FAIL" starttime="20200717 14:47:41.318" endtime="20200717 14:49:11.569"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="8">Critical Tests</stat>
+<stat pass="0" fail="8">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="8" id="s1" name="LoginFunctionality &amp; LoginScenario &amp; Default &amp; Suite">LoginFunctionality &amp; LoginScenario &amp; Default &amp; Suite</stat>
+<stat pass="0" fail="1" id="s1-s1" name="LoginFunctionality">LoginFunctionality &amp; LoginScenario &amp; Default &amp; Suite.LoginFunctionality</stat>
+<stat pass="0" fail="4" id="s1-s2" name="LoginScenario">LoginFunctionality &amp; LoginScenario &amp; Default &amp; Suite.LoginScenario</stat>
+<stat pass="0" fail="1" id="s1-s3" name="Default">LoginFunctionality &amp; LoginScenario &amp; Default &amp; Suite.Default</stat>
+<stat pass="0" fail="2" id="s1-s4" name="Suite">LoginFunctionality &amp; LoginScenario &amp; Default &amp; Suite.Suite</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20200717 14:48:31.098" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: WebDriverException: Message: chrome not reachable
+  (Session info: chrome=83.0.4103.116)
+</msg>
+<msg timestamp="20200717 14:48:38.755" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: WebDriverException: Message: chrome not reachable
+  (Session info: chrome=83.0.4103.116)
+</msg>
+<msg timestamp="20200717 14:48:46.239" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: WebDriverException: Message: chrome not reachable
+  (Session info: chrome=83.0.4103.116)
+</msg>
+<msg timestamp="20200717 14:48:53.344" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: WebDriverException: Message: chrome not reachable
+  (Session info: chrome=83.0.4103.116)
+</msg>
+<msg timestamp="20200717 14:49:00.164" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: WebDriverException: Message: chrome not reachable
+  (Session info: chrome=83.0.4103.116)
+</msg>
+<msg timestamp="20200717 14:49:11.530" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: WebDriverException: Message: chrome not reachable
+  (Session info: chrome=83.0.4103.116)
+</msg>
+</errors>
+</robot>

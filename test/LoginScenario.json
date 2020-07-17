@@ -1,0 +1,11 @@
+{	"settingsList": {},
+	"variableList": {},
+	"testcaseList": {"Login with valid User and Password": ["Input User Subbu","Input Password Password", "Click Login"],
+		"Login with invalid User and valid Password": ["Input User invalid","Input Password Password", "Click Login"],
+		"Login with valid User and invalid Password": ["Input User valid","Input Password invalid", "Click Login"],
+		"Login with invalid User and invalid Password": ["Input User invalid","Input Password invalid", "Click Login"]
+     
+    
+    }
+	
+}
