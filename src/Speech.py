@@ -9,7 +9,7 @@ def recordVoice():
 
         # Speech recognition using Google Speech Recognition
         try:
-            command = r.recognize_google(audio);
+            command = r.recognize_google(audio)
             print("****  YOUR INPUT **** \n" + command)
 
             return command
